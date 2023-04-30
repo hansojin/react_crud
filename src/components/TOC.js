@@ -7,7 +7,21 @@ class TOC extends Component{
         var data = this.props.data
         var i =0;
         while (i<data.length){
-            lists.push(<li key={data[i].id}><a href = { "/content/"+data[i].id } >{data[i].title}</a></li>)
+            lists.push(
+                <li key={data[i].id}>
+                    <a 
+                        href = { "/content/"+data[i].id } 
+                        // onClick={function(e){
+                        //     debugger; try first to test 'e' in console to find target
+                        //     e.preventDefault();
+                        //     this.props.onChangePage(e.target.dataset.id);
+                        // }.bind(this)}
+                        onClick={function(id,e){
+                            e.preventDefault();
+                            this.props.onChangePage(id);
+                        }.bind(this,data[i].id)}
+                    >{data[i].title}</a>
+                </li>);
             i+=1;
         }
         return(
