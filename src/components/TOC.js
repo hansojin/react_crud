@@ -12,7 +12,7 @@ class TOC extends Component{
                     <a 
                         href = { "/content/"+data[i].id } 
                         // onClick={function(e){
-                        //     debugger; try first to test 'e' in console to find target
+                        //     //debugger; try first to test 'e' in console to find target
                         //     e.preventDefault();
                         //     this.props.onChangePage(e.target.dataset.id);
                         // }.bind(this)}
